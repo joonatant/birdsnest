@@ -19,6 +19,12 @@ const updateViolations = async () => {
         delete presentData[i]
     }
     violationHistory = {...violationHistory, ...presentData}
+
+    for(const i in violationHistory) {
+        if(violationHistory[i].time + 600000 < Date.now()) {
+            delete violationHistory[i]
+        }
+    }
 }
 
 setInterval(updateViolations, interval)

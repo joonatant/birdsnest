@@ -14,6 +14,7 @@ const fetchViolations = async (drones) => {
                 violationsObj[drone.serialNumber._text] = violatorConstructor(response.data, calc.dist)
             })
             .catch( error => {
+                console.log(error)
             })
         }
     }
