@@ -7,14 +7,18 @@ const interval = !!process.env.REFREST_RATE ? Number(process.env.REFREST_RATE) :
 
 const updateViolations = async () => {
     const presentData = await presentDrones()
-    const duplicates = []
+    let duplicates = []
+
     for(const i in presentData) {
         if(violationHistory.hasOwnProperty(i)) {
             violationHistory[i].time = presentData[i].time
-            if(violationHistory[i].dist > presentData[i].dist) violationHistory[i].dist = presentData[i].dist
-            duplicates.concat(i)
+            if(violationHistory[i].dist > presentData[i].dist) {
+                violationHistory[i].dist = presentData[i].dist
+            }
+            duplicates.push(i)
         }
     }
+    
     for(const i of duplicates) {
         delete presentData[i]
     }
