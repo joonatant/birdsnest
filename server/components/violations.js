@@ -11,7 +11,7 @@ const updateViolations = async () => {
     for(const i in presentData) {
         if(violationHistory.hasOwnProperty(i)) {
             violationHistory[i].time = presentData[i].time
-            if(violationHistory[i].dist < presentData[i].dist) violationHistory[i].dist = presentData[i].dist
+            if(violationHistory[i].dist > presentData[i].dist) violationHistory[i].dist = presentData[i].dist
             duplicates.concat(i)
         }
     }
