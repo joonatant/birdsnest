@@ -21,7 +21,7 @@ const App = () => {
           </a>
           <a
             className="App-link"
-            href="https://github.com/joonatant"
+            href="https://www.linkedin.com/in/joonatan-taponen-3563b1209"
             target="_blank"
             rel="noopener noreferrer"
           >
