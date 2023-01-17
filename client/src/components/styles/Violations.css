@@ -6,6 +6,7 @@
     justify-content: center;
     text-align: center;
     font-size: calc(10px + 1vmin);
+    margin-bottom: 10vh;
 }
 .Violation-table {
     color: black;
